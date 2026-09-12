@@ -671,7 +671,7 @@ static void parse_inittab(void)
 {
 #if ENABLE_FEATURE_USE_INITTAB
 	char *token[4];
-	parser_t *parser = config_open2("/etc/inittab", fopen_for_read);
+	parser_t *parser = config_open2("/inittab", fopen_for_read);
 
 	if (parser == NULL)
 #endif
@@ -916,7 +916,7 @@ static void reload_inittab(void)
 {
 	struct init_action *a, **nextp;
 
-	message(L_LOG, "reloading /etc/inittab");
+	message(L_LOG, "reloading /inittab");
 
 	/* Disable old entries */
 	for (a = G.init_action_list; a; a = a->next)
